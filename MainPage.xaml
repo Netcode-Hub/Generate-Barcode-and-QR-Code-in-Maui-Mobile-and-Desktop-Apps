@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GenerateBarcode.MainPage"
+             xmlns:cb="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             xmlns:viewmodel="clr-namespace:GenerateBarcode"
+             x:DataType="viewmodel:MainPageViewModel">
+
+    <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="10">
+        
+        <Entry Text="{Binding StringText}" WidthRequest="300" HeightRequest="50" Margin="10"></Entry>
+
+        <cb:BarcodeImage BarcodeMargin="5"
+                         BarcodeHeight="300"
+                         BarcodeWidth="300"
+                         HeightRequest="300"
+                         WidthRequest="300"
+                         BackgroundColor="Transparent"
+                         BarcodeForeground="IndianRed"
+                         BarcodeFormat="CODE_128"
+                         Barcode="{Binding StringText}"
+                         Margin="10">
+        </cb:BarcodeImage>
+
+        <cb:BarcodeImage BarcodeMargin="5"
+                 BarcodeHeight="300"
+                 BarcodeWidth="300"
+                 HeightRequest="300"
+                 WidthRequest="300"
+                 BackgroundColor="Transparent"
+                 BarcodeForeground="IndianRed"
+                 BarcodeFormat="QR_CODE"
+                 Barcode="{Binding StringText}"
+                 Margin="10,0,10,10">
+        </cb:BarcodeImage>
+    </StackLayout>
+
+</ContentPage>
